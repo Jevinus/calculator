@@ -21,12 +21,14 @@ body {
 
 #calculation {
   background-color: rgb(0, 0, 0);
-  width: 400px;
+  width: 425px;
   height: 125px;
   font-size: 72px;
   display: flex;
   align-items: center;
   justify-content: end;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 
 .display-value {
@@ -37,15 +39,18 @@ body {
 
 #buttons {
   height: 500px;
-  width: 400px;
+  width: 425px;
   background-color: black;
   gap: 24px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 .row-one,
 .row-two,
 .row-three,
-.row-four {
+.row-four,
+.row-five {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -60,12 +65,16 @@ body {
   background-color: orange !important;
 }
 
+.lightgrey {
+  background-color: grey !important;
+}
+
 .button {
   height: 75px;
   width: 75px;
   border-radius: 100px;
   font-size: 30px;
-  background-color: grey;
+  background-color: darkgrey;
   color: white;
 }
 

@@ -1,5 +1,4 @@
-let displayValue = document.querySelector("");
-
+// Arithmetic functionality
 const operators = {
   addition: function (num1, num2) {
     return num1 + num2;
@@ -19,22 +18,21 @@ function operate(operator, num1, num2) {}
 
 //
 const calcResult = document.getElementsByClassName("calculation-result");
+const btn1 = document.querySelector(".btn1");
+const btn2 = document.querySelector(".btn2");
+const btn3 = document.querySelector(".btn3");
+const btn4 = document.querySelector(".btn4");
+const btn5 = document.querySelector(".btn5");
+const btn6 = document.querySelector(".btn6");
+const btn7 = document.querySelector(".btn7");
+const btn8 = document.querySelector(".btn8");
+const btn9 = document.querySelector(".btn9");
+const btn0 = document.querySelector(".btn0");
+const plus = document.querySelector(".plus");
+const minus = document.querySelector(".minus");
+const multiply = document.querySelector(".multiply");
+const divide = document.querySelector(".divide");
+const dot = document.querySelector(".dot");
+const equals = document.querySelector(".equals");
 
-// Ignore for now
-// const buttons = {
-//   0: document.getElementsByClassName("0"),
-//   1: document.getElementsByClassName("1"),
-//   2: document.getElementsByClassName("2"),
-//   3: document.getElementsByClassName("3"),
-//   4: document.getElementsByClassName("4"),
-//   5: document.getElementsByClassName("5"),
-//   6: document.getElementsByClassName("6"),
-//   7: document.getElementsByClassName("7"),
-//   8: document.getElementsByClassName("8"),
-//   9: document.getElementsByClassName("9"),
-//   times: document.getElementsByClassName("*"),
-//   minus: document.getElementsByClassName("-"),
-//   plus: document.getElementsByClassName("+"),
-//   dot: document.getElementsByClassName("."),
-//   equals: document.getElementsByClassName("="),
-// };
+console.log(calcResult);
