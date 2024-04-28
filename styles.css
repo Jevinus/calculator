@@ -9,6 +9,7 @@
 
 body {
   background-color: #6b5c5c;
+  height: 100vh;
 }
 
 .header {
@@ -95,7 +96,7 @@ body {
 }
 
 .button:hover {
-  background-color: lightgray !important;
+  background-color: rgb(143, 143, 143) !important;
 }
 
 footer {
@@ -108,15 +109,19 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: sticky;
+  height: 75px;
+  top: calc(100vh - 75px);
 }
 
 .footer-para {
   margin: 0px;
+  font-size: 20px;
   width: 100%;
 }
 
 .footer-img {
-  height: 40px;
-  width: 40px;
+  height: 45px;
+  width: 50px;
   margin-bottom: -15px;
 }
