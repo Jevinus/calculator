@@ -66,6 +66,7 @@ const equals = document.querySelector(".equals");
 const displayValue = document.querySelector(".display-value");
 const clear = document.querySelector(".clear");
 
+// Zero
 btn0.addEventListener("click", function () {
   displayValue.textContent += "0";
   if (operator === "") {
@@ -75,27 +76,41 @@ btn0.addEventListener("click", function () {
   }
 });
 
+// One
 btn1.addEventListener("click", function () {
   displayValue.textContent += "1";
 
   if (operator === "") {
-    num1 += "1";
+    num1 = 1;
   } else {
-    num2 += "1";
+    num2 = 1;
   }
   console.log(num1, num2);
 });
 
-btn9.addEventListener("click", function () {
-  displayValue.textContent += "9";
+// Four
+btn4.addEventListener("click", function () {
   if (operator === "") {
-    num1 += "9";
+    num1 = 4;
+    displayValue.textContent = String(num1);
   } else {
-    num2 += "9";
+    num2 = 4;
+    displayValue.textContent += String(num2);
+  }
+  console.log(num2);
+});
+
+btn9.addEventListener("click", function () {
+  if (operator === "") {
+    num1 = 9;
+    displayValue.textContent = String(num1);
+  } else {
+    num2 = 9;
+    displayValue.textContent += String(num2);
   }
 });
 
-// BORDER
+// Plus button
 plus.addEventListener("click", function () {
   operator = "+";
   displayValue.textContent += "+";
@@ -103,13 +118,28 @@ plus.addEventListener("click", function () {
   console.log(operator);
 });
 
+// Multiplication button
+multiply.addEventListener("click", function () {
+  operator = "*";
+  displayValue.textContent += "x";
+
+  console.log(operator);
+});
+
+// Divide button
+divide.addEventListener("click", function () {
+  operator = "/";
+  displayValue.textContent += "/";
+
+  console.log(operator);
+});
+
+// Calls the operation function using the operator variable value
 equals.addEventListener("click", function () {
   let result = operation(operator, num1, num1);
   displayValue.textContent = result;
   console.log(result);
   console.log(displayValue);
-  // displayValue.textContent = undefined;
-  // operator = undefined;
   [num1, num2] = "";
   operator = "";
   console.log(num1, num2);
