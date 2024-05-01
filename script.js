@@ -22,6 +22,8 @@ let num1 = "";
 let num2 = "";
 let operator = "";
 
+// Create variable to store extended calculations
+
 // Intakes calculator input and returns a value
 function operation(operator, num1, num2) {
   Number(num1, num2);
@@ -41,13 +43,8 @@ function operation(operator, num1, num2) {
   }
 }
 
-// const buttons = [];
-
-// for (let i = 0; i <= 9; i++) {
-//   buttons[i] = document.queryselector(".btn" + i);
-// }
-
 // DOM query selectors
+const buttons = document.querySelector(".num");
 const btn0 = document.querySelector(".btn0");
 const btn1 = document.querySelector(".btn1");
 const btn2 = document.querySelector(".btn2");
@@ -63,29 +60,66 @@ const multiply = document.querySelector(".multiply");
 const plus = document.querySelector(".plus");
 const minus = document.querySelector(".minus");
 const equals = document.querySelector(".equals");
+const modulo = document.querySelector(".modulo");
 const displayValue = document.querySelector(".display-value");
 const clear = document.querySelector(".clear");
 
+// REPLACEMENT CODE BELOW THIS LINE
+function numberInput(num) {
+  if (operator === "") {
+    num1 = `${num}`;
+    displayValue.textContent = String(num1);
+  } else {
+    num2 = `${num}`;
+    displayValue.textContent += String(num2);
+  }
+}
+
+buttons.addEventListener("click", numberInput);
+
+// REPLACEMENT CODE ABOVE THIS LINE
 // Zero
 btn0.addEventListener("click", function () {
-  displayValue.textContent += "0";
   if (operator === "") {
-    num1 += "0";
+    num1 = 0;
+    displayValue.textContent = String(num1);
   } else {
-    num2 += "0";
+    num2 = 0;
+    displayValue.textContent += String(num2);
   }
 });
 
 // One
 btn1.addEventListener("click", function () {
-  displayValue.textContent += "1";
-
   if (operator === "") {
     num1 = 1;
+    displayValue.textContent = String(num1);
   } else {
     num2 = 1;
+    displayValue.textContent += String(num2);
   }
-  console.log(num1, num2);
+});
+
+// Two
+btn2.addEventListener("click", function () {
+  if (operator === "") {
+    num1 = 2;
+    displayValue.textContent = String(num1);
+  } else {
+    num2 = 2;
+    displayValue.textContent += String(num2);
+  }
+});
+
+// Three
+btn3.addEventListener("click", function () {
+  if (operator === "") {
+    num1 = 3;
+    displayValue.textContent = String(num1);
+  } else {
+    num2 = 3;
+    displayValue.textContent += String(num2);
+  }
 });
 
 // Four
@@ -97,7 +131,6 @@ btn4.addEventListener("click", function () {
     num2 = 4;
     displayValue.textContent += String(num2);
   }
-  console.log(num2);
 });
 
 btn9.addEventListener("click", function () {
@@ -114,35 +147,38 @@ btn9.addEventListener("click", function () {
 plus.addEventListener("click", function () {
   operator = "+";
   displayValue.textContent += "+";
+});
 
-  console.log(operator);
+// Subtraction button
+minus.addEventListener("click", function () {
+  operator = "-";
+  displayValue.textContent += "-";
 });
 
 // Multiplication button
 multiply.addEventListener("click", function () {
   operator = "*";
   displayValue.textContent += "x";
-
-  console.log(operator);
 });
 
 // Divide button
 divide.addEventListener("click", function () {
   operator = "/";
   displayValue.textContent += "/";
+});
 
-  console.log(operator);
+// Modulate button
+modulo.addEventListener("click", function () {
+  operator = "%";
+  displayValue.textContent += "%";
 });
 
 // Calls the operation function using the operator variable value
 equals.addEventListener("click", function () {
   let result = operation(operator, num1, num1);
   displayValue.textContent = result;
-  console.log(result);
-  console.log(displayValue);
   [num1, num2] = "";
   operator = "";
-  console.log(num1, num2);
 });
 
 // CLear button
@@ -151,3 +187,8 @@ clear.addEventListener("click", function () {
   [num1, num2] = "";
   operator = "";
 });
+
+// const themeButton = document.getElementById("theme");
+// themeButton.addEventListener("click", function () {
+//   if (document.querySelector("#buttons").style)
+// });
