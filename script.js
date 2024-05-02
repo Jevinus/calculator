@@ -1,10 +1,10 @@
 // Operator methods for calculator functionality
 const operators = {
   add: function (num1, num2) {
-    return num1 + num2;
+    return (num1 += num2);
   },
   subtract: function (num1, num2) {
-    return num1 - num2;
+    return (num1 -= num2);
   },
   multiply: function (num1, num2) {
     return num1 * num2;
@@ -43,6 +43,7 @@ let num2 = "";
 let operator = "";
 
 // Query selectors for functionality
+const theme = document.getElementById("theme");
 const buttons = document.querySelectorAll(".num");
 const btn0 = document.querySelector(".btn0");
 const btn1 = document.querySelector(".btn1");
@@ -80,7 +81,7 @@ function numberInput(num) {
   }
 }
 
-// Intakes the number of pressed button and loops until i is equal to it
+// Intakes the number of the pressed button and loops until 'i' is equal to it
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function () {
     let buttonValue = buttons[i].textContent;
@@ -120,20 +121,33 @@ modulo.addEventListener("click", function () {
 
 // Calls the operation function
 equals.addEventListener("click", function () {
+  console.log(num1, num2, operator);
   let result = operation(operator, num1, num1);
   displayValue.textContent = result;
   [num1, num2] = "";
   operator = "";
 });
 
-// CLear button
+// Clear button
 clear.addEventListener("click", function () {
   displayValue.textContent = "";
   [num1, num2] = "";
   operator = "";
 });
 
-// const themeButton = document.getElementById("theme");
-// themeButton.addEventListener("click", function () {
-//   if (document.querySelector("#buttons").style)
-// });
+// Theme changer
+theme.addEventListener("click", () => {
+  document.querySelector(".buttons").style.backgroundColor = "black";
+  document.querySelector(".calculation").style.backgroundColor = "black";
+  document.querySelectorAll(".button").forEach(function (button) {
+    button.style.backgroundColor = "darkgrey";
+  });
+  document.querySelectorAll(".lightgrey").forEach(function (button) {
+    button.style.backgroundColor = "darkslategrey";
+  });
+  document.querySelectorAll(".orange").forEach(function (button) {
+    button.style.backgroundColor = "orange";
+  });
+
+  console.log("yep");
+});

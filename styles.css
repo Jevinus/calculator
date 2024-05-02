@@ -27,8 +27,11 @@ body {
 }
 
 #theme {
-  padding: 20px;
+  margin-left: 20px;
+  padding: 10px;
+  width: 100px;
   cursor: pointer;
+  border-radius: 20px;
 }
 
 #calculator {
@@ -98,11 +101,11 @@ body {
 }
 
 .orange {
-  background-color: rgb(66, 65, 62) !important;
+  background-color: rgb(66, 65, 62);
 }
 
 .lightgrey {
-  background-color: rgb(66, 65, 62) !important;
+  background-color: rgb(66, 65, 62);
 }
 
 .button {
@@ -117,11 +120,11 @@ body {
 
 .button:hover {
   transition: all 0.2s ease-in-out;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .button:hover {
-  background-color: rgb(143, 143, 143) !important;
+  background-color: rgb(27, 26, 26) !important;
 }
 
 footer {
