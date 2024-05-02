@@ -17,13 +17,6 @@ const operators = {
   },
 };
 
-let display;
-let num1 = "";
-let num2 = "";
-let operator = "";
-
-// Create variable to store extended calculations
-
 // Intakes calculator input and returns a value
 function operation(operator, num1, num2) {
   Number(num1, num2);
@@ -43,8 +36,14 @@ function operation(operator, num1, num2) {
   }
 }
 
-// DOM query selectors
-const buttons = document.querySelector(".num");
+// Intakes clicked numbers and operators
+let display;
+let num1 = "";
+let num2 = "";
+let operator = "";
+
+// Query selectors for functionality
+const buttons = document.querySelectorAll(".num");
 const btn0 = document.querySelector(".btn0");
 const btn1 = document.querySelector(".btn1");
 const btn2 = document.querySelector(".btn2");
@@ -64,84 +63,30 @@ const modulo = document.querySelector(".modulo");
 const displayValue = document.querySelector(".display-value");
 const clear = document.querySelector(".clear");
 
-// REPLACEMENT CODE BELOW THIS LINE
+// Callback function
 function numberInput(num) {
-  if (operator === "") {
+  if (operator === "" && num1 === "") {
     num1 = `${num}`;
-    displayValue.textContent = String(num1);
-  } else {
+    displayValue.textContent = String(num);
+  } else if (operator === "") {
+    num1 + `${num}`;
+    displayValue.textContent += String(num);
+  } else if (num2 === "") {
     num2 = `${num}`;
-    displayValue.textContent += String(num2);
+    displayValue.textContent += String(num);
+  } else {
+    num2 + `${num}`;
+    displayValue.textContent += String(num);
   }
 }
 
-buttons.addEventListener("click", numberInput);
-
-// REPLACEMENT CODE ABOVE THIS LINE
-// Zero
-btn0.addEventListener("click", function () {
-  if (operator === "") {
-    num1 = 0;
-    displayValue.textContent = String(num1);
-  } else {
-    num2 = 0;
-    displayValue.textContent += String(num2);
-  }
-});
-
-// One
-btn1.addEventListener("click", function () {
-  if (operator === "") {
-    num1 = 1;
-    displayValue.textContent = String(num1);
-  } else {
-    num2 = 1;
-    displayValue.textContent += String(num2);
-  }
-});
-
-// Two
-btn2.addEventListener("click", function () {
-  if (operator === "") {
-    num1 = 2;
-    displayValue.textContent = String(num1);
-  } else {
-    num2 = 2;
-    displayValue.textContent += String(num2);
-  }
-});
-
-// Three
-btn3.addEventListener("click", function () {
-  if (operator === "") {
-    num1 = 3;
-    displayValue.textContent = String(num1);
-  } else {
-    num2 = 3;
-    displayValue.textContent += String(num2);
-  }
-});
-
-// Four
-btn4.addEventListener("click", function () {
-  if (operator === "") {
-    num1 = 4;
-    displayValue.textContent = String(num1);
-  } else {
-    num2 = 4;
-    displayValue.textContent += String(num2);
-  }
-});
-
-btn9.addEventListener("click", function () {
-  if (operator === "") {
-    num1 = 9;
-    displayValue.textContent = String(num1);
-  } else {
-    num2 = 9;
-    displayValue.textContent += String(num2);
-  }
-});
+// Intakes the number of pressed button and loops until i is equal to it
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function () {
+    let buttonValue = buttons[i].textContent;
+    numberInput(buttonValue);
+  });
+}
 
 // Plus button
 plus.addEventListener("click", function () {
@@ -173,7 +118,7 @@ modulo.addEventListener("click", function () {
   displayValue.textContent += "%";
 });
 
-// Calls the operation function using the operator variable value
+// Calls the operation function
 equals.addEventListener("click", function () {
   let result = operation(operator, num1, num1);
   displayValue.textContent = result;
