@@ -136,18 +136,25 @@ clear.addEventListener("click", function () {
 });
 
 // Theme changer
-theme.addEventListener("click", () => {
-  document.querySelector(".buttons").style.backgroundColor = "black";
-  document.querySelector(".calculation").style.backgroundColor = "black";
-  document.querySelectorAll(".button").forEach(function (button) {
-    button.style.backgroundColor = "darkgrey";
-  });
-  document.querySelectorAll(".lightgrey").forEach(function (button) {
-    button.style.backgroundColor = "darkslategrey";
-  });
-  document.querySelectorAll(".orange").forEach(function (button) {
-    button.style.backgroundColor = "orange";
-  });
+const themeButtonCon = document.querySelector(".button--con");
+const themeCalc = document.querySelector(".calculation");
+const themeButtons = document.querySelectorAll(".button");
+const themeTop = document.querySelectorAll(".top--row");
+const themeRight = document.querySelectorAll(".right--row");
 
-  console.log("yep");
+theme.addEventListener("click", () => {
+  themeButtonCon.classList.toggle("theme--con");
+  themeCalc.classList.toggle("theme--con");
+
+  for (const cur of themeButtons) {
+    cur.classList.toggle("theme--button");
+  }
+
+  for (const cur of themeTop) {
+    cur.classList.toggle("theme--top");
+  }
+
+  for (const cur of themeRight) {
+    cur.classList.toggle("theme--right");
+  }
 });

@@ -75,7 +75,7 @@ body {
   margin-left: 10px;
 }
 
-#buttons {
+.button--con {
   height: 500px;
   width: 425px;
   background-color: silver;
@@ -100,11 +100,11 @@ body {
   width: 170px !important;
 }
 
-.orange {
+.top--row {
   background-color: rgb(66, 65, 62);
 }
 
-.lightgrey {
+.right--row {
   background-color: rgb(66, 65, 62);
 }
 
@@ -152,4 +152,21 @@ footer {
   height: 45px;
   width: 50px;
   margin-bottom: -15px;
+}
+
+/* THEME TOGGLE */
+.theme--con {
+  background-color: black !important;
+}
+
+.theme--button {
+  background-color: #6b5c5c;
+}
+
+.theme--top {
+  background-color: lightgray !important;
+}
+
+.theme--right {
+  background-color: orange !important;
 }
